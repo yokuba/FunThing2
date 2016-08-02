@@ -6,6 +6,36 @@
     android:background="#FFCCCCCC"
     tools:context=".MainActivity"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="184dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/new_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/new_canvas"
+            android:src="@drawable/new_canvas"/>
+        <ImageButton
+            android:id="@+id/draw_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/brush"
+            android:src="@drawable/brush"/>
+        <ImageButton
+            android:id="@+id/erase_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/erase"
+            android:src="@drawable/eraser"/>
+        <ImageButton
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:contentDescription="@string/save"
+            android:src="@drawable/save"/>
+    </LinearLayout>
     <com.aliciamaclennan.DrawingView
         android:id="@+id/drawing"
         android:layout_width="fill_parent"
@@ -151,37 +181,5 @@
                 android:src="@drawable/paint"
                 android:tag="#FF000000" />>
             </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal" >
-
-        <ImageButton
-            android:id="@+id/new_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:contentDescription="@string/new_canvas"
-            android:src="@drawable/new_canvas" />
-        <ImageButton
-            android:id="@+id/draw_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:contentDescription="@string/brush"
-            android:src="@drawable/brush" />
-        <ImageButton
-            android:id="@+id/erase_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:contentDescription="@string/erase"
-            android:src="@drawable/eraser" />
-        <ImageButton
-            android:id="@+id/save_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:contentDescription="@string/save"
-            android:src="@drawable/save" />
     </LinearLayout>
 </LinearLayout>
