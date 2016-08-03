@@ -27,6 +27,7 @@ public class DrawingView extends View {
     //canvas bitmap
     private Bitmap canvasBitmap;
     private float brushSize, lastBrushSize;
+    private boolean erase=false;
 
     public DrawingView(Context context, AttributeSet attrs){
         super(context, attrs);
@@ -99,5 +100,21 @@ public class DrawingView extends View {
     }
     public float getLastBrushSize(){
         return lastBrushSize;
+    }
+
+    public void setErase(boolean isErase){
+        erase = isErase;
+        if(erase) {
+            //drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+            this.setColor("#FFFFFFFF");//set the color to white
+        }else{
+            //drawPaint.setXfermode(null);
+            this.setColor(paintColor); //if erase is set to false, it will use the previous color.
+        }
+    }
+    public void setColor(int newColor){
+        invalidate();
+        paintColor = newColor;
+        drawPaint.setColor(paintColor);
     }
 }
