@@ -11,8 +11,8 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     private DrawingView drawView;
-    private ImageButton currPaint, drawBtn;
     private float smallBrush, mediumBrush, largeBrush;
+    private ImageButton currPaint, drawBtn, eraseBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         drawBtn.setOnClickListener(this);
         ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null);
         drawView.setBrushSize(mediumBrush);
+        eraseBtn = (ImageButton)findViewById(R.id.erase_btn);
+        eraseBtn.setOnClickListener(this);
 
     }
 
@@ -35,12 +37,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         //use chosen color
         if (view != currPaint) {
             //update color
+            drawView.setErase(false);
+            drawView.setBrushSize(drawView.getLastBrushSize());
             ImageButton imgView = (ImageButton) view;
             String color = view.getTag().toString();
             drawView.setColor(color);
-
             imgView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null));
-
             currPaint.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null));
             currPaint = (ImageButton) view;
         }
@@ -59,6 +61,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 public void onClick(View view) {
                     drawView.setBrushSize(smallBrush);
                     drawView.setLastBrushSize(smallBrush);
+                    drawView.setErase(false);
                     brushDialog.dismiss();
                 }
             });
@@ -68,6 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 public void onClick(View v) {
                     drawView.setBrushSize(mediumBrush);
                     drawView.setLastBrushSize(mediumBrush);
+                    drawView.setErase(false);
                     brushDialog.dismiss();
                 }
             });
@@ -78,6 +82,41 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 public void onClick(View v) {
                     drawView.setBrushSize(largeBrush);
                     drawView.setLastBrushSize(largeBrush);
+                    drawView.setErase(false);
+                    brushDialog.dismiss();
+                }
+            });
+            brushDialog.show();
+
+        } else if (view.getId() == R.id.erase_btn) {
+            //switch to erase - choose size
+            final Dialog brushDialog = new Dialog(this);
+            brushDialog.setTitle("Eraser size:");
+            brushDialog.setContentView(R.layout.brush_choice);
+            ImageButton smallBtn = (ImageButton)brushDialog.findViewById(R.id.small_brush);
+            smallBtn.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    drawView.setErase(true);
+                    drawView.setBrushSize(smallBrush);
+                    brushDialog.dismiss();
+                }
+            });
+            ImageButton mediumBtn = (ImageButton)brushDialog.findViewById(R.id.medium_brush);
+            mediumBtn.setOnClickListener(new OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    drawView.setErase(true);
+                    drawView.setBrushSize(mediumBrush);
+                    brushDialog.dismiss();
+                }
+            });
+            ImageButton largeBtn = (ImageButton)brushDialog.findViewById(R.id.large_brush);
+            largeBtn.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    drawView.setErase(true);
+                    drawView.setBrushSize(largeBrush);
                     brushDialog.dismiss();
                 }
             });
