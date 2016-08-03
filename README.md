@@ -1,4 +1,4 @@
-# FunThing2
+# FunThing2 ![alt text](https://github.com/yokuba/FunThing2/blob/master/imgs/fun_thing.png)
 ![alt text](https://github.com/yokuba/FunThing2/blob/master/imgs/fun_thing.png)
 ![alt text](https://github.com/yokuba/FunThing2/blob/master/imgs/screen_shot2.png)
 
