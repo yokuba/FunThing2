@@ -1,6 +1,7 @@
 package com.example.aliciamaclennan.funthing;
 
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         drawView = (DrawingView) findViewById(R.id.drawing);
         LinearLayout paintLayout = (LinearLayout)findViewById(R.id.paint_colors);
         currPaint = (ImageButton)paintLayout.getChildAt(0);
-        currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
+        ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null);
 
     }
 
