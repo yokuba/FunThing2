@@ -5,6 +5,7 @@ package com.example.aliciamaclennan.funthing; /**
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -75,5 +76,11 @@ public class DrawingView extends View {
         }
         invalidate();
         return true;
+    }
+    public void setColor(String newColor){
+//set color
+        invalidate();
+        paintColor = Color.parseColor(newColor);
+        drawPaint.setColor(paintColor);
     }
 }
