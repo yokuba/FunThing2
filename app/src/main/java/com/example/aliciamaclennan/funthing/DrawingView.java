@@ -8,6 +8,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -105,11 +107,11 @@ public class DrawingView extends View {
     public void setErase(boolean isErase){
         erase = isErase;
         if(erase) {
-            //drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-            this.setColor("#FFFFFFFF");//set the color to white
+            drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+            //this.setColor("#FFFFFFFF");//set the color to white
         }else{
-            //drawPaint.setXfermode(null);
-            this.setColor(paintColor); //if erase is set to false, it will use the previous color.
+            drawPaint.setXfermode(null);
+            //this.setColor(paintColor); //if erase is set to false, it will use the previous color.
         }
     }
     public void setColor(int newColor){
