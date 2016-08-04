@@ -119,4 +119,8 @@ public class DrawingView extends View {
         paintColor = newColor;
         drawPaint.setColor(paintColor);
     }
+    public void startNew() {
+        drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+        invalidate();
+    }
 }
