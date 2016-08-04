@@ -6,5 +6,5 @@ This is a finger-painting app for Android. Currently a work-in-progress.
 
 
 
-Touch palette to change colors. Will add save functionality, as well as brush size and eraser in future iterations.
+Touch palette to change colors. Toolbar allows user to change brush size, erase, save drawing and start over.
 
