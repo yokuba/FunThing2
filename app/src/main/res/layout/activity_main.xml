@@ -37,7 +37,7 @@
             android:contentDescription="@string/save"
             android:src="@drawable/save"/>
     </LinearLayout>
-    <com.example.aliciamaclennan.funthing.DrawingView
+    <com.aliciamaclennan.funthing.DrawingView
         android:id="@+id/drawing"
         android:layout_width="fill_parent"
         android:layout_height="0dp"

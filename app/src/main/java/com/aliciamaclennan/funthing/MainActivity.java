@@ -1,4 +1,4 @@
-package com.example.aliciamaclennan.funthing;
+package com.aliciamaclennan.funthing;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.UUID;
 
 public class MainActivity extends Activity implements View.OnClickListener {
-    private DrawingView drawView;
+    private com.aliciamaclennan.funthing.DrawingView drawView;
     private float smallBrush, mediumBrush, largeBrush;
     private ImageButton currPaint, drawBtn, eraseBtn, newBtn, saveBtn;
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        drawView = (DrawingView) findViewById(R.id.drawing);
+        drawView = (com.aliciamaclennan.funthing.DrawingView) findViewById(R.id.drawing);
         smallBrush = getResources().getInteger(R.integer.small_size);
         mediumBrush = getResources().getInteger(R.integer.medium_size);
         largeBrush = getResources().getInteger(R.integer.large_size);

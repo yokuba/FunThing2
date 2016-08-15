@@ -1,4 +1,4 @@
-package com.example.aliciamaclennan.funthing; /**
+package com.aliciamaclennan.funthing; /**
  * Created by amac on 8/2/16.
  */
 

@@ -1,4 +1,4 @@
-package com.example.aliciamaclennan.funthing;
+package com.aliciamaclennan.funthing;
 
 import org.junit.Test;
 

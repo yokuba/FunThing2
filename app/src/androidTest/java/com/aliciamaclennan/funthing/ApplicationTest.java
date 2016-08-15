@@ -1,4 +1,4 @@
-package com.example.aliciamaclennan.funthing;
+package com.aliciamaclennan.funthing;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
