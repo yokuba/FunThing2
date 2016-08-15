@@ -52,8 +52,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             ImageButton imgView = (ImageButton) view;
             String color = view.getTag().toString();
             drawView.setColor(color);
-            imgView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null));
-            currPaint.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.paint_pressed, null));
+            imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
+            currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint));
             currPaint = (ImageButton) view;
         }
     }
